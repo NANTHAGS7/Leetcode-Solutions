@@ -1,11 +1,11 @@
 class Solution {
     public int longestPalindrome(String s) {
         int count[] = new int[128];
+        int result = 0;
+        boolean flag = false;
         for(char c:s.toCharArray()){
             count[c]++;
         }
-        int result = 0;
-        boolean flag = false;
         for(int c:count){
             if(c % 2 == 0) result += c;
             else{
