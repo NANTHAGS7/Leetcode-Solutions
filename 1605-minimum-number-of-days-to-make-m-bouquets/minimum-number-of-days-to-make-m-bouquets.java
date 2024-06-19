@@ -9,17 +9,17 @@ class Solution {
                 adj++;
                 if(adj == k){
                     bc++;
+                    adj = 0;
                     if(bc == m){
                         return true;
                     }
-                    adj = 0;
                 }
             }
             else{
                 adj = 0;
             }
         }
-        return false;
+        return bc >= m;
     }
 
     public int minDays(int[] arr, int m, int k) {
@@ -27,8 +27,8 @@ class Solution {
 
         if(m*k > n) return -1;
 
-        int l = 0;
-        int r = 0;
+        int l = Integer.MAX_VALUE;
+        int r = Integer.MIN_VALUE;
 
         for(int i=0;i<n;i++){
             if(arr[i]<l) l = arr[i];
